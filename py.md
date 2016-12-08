@@ -1,4 +1,4 @@
-```
+```python
 #py是一门动态语言（变量本身类型不固定的语言）
 kk=100
 kk='Hello world!'
@@ -31,9 +31,7 @@ print(r"""\t
 if not False:
     print(100+1)
 
-#字符串编码问题 http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000
 name=input()#输入
 print('hello ',name)
-
 ```
 
