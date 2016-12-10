@@ -4,6 +4,10 @@ kk=100
 kk='Hello world!'
 print(kk)
 
+#可以将一个函数名作为右值，相当于给这个函数起一个别名 
+a=fbs
+a(-1)
+
 #输入
 name=input(‘可在这输入提示性语句’)
 print(name)
@@ -62,7 +66,6 @@ print(r"""\t
 #and or not
 if not False:
     print(100+1)
-
 ```
 
 - ***list与tuple***
@@ -94,12 +97,57 @@ if not False:
 
   #但是tuple中的list中的元素却可以改变，因为tuple只是直接指向的不变
   b[3][2]=b
-
-
-
   ```
 
-  ​
+- *dic与set*
 
+  ```python
+  #dic相当于map，键值存储,空间换时间，hash算法，key必须是不可变的，如字符串和整数，list不可以
+  d={1:5,'mike':4}
+  d[1]=67
+  print(d[1])
+
+  #可用get方法确保取得值时不发生错误，如果key不存在，则返回默认值none，或者可以自己设置一个默认值
+  d.get(2)
+  d.get(2,-3)
+
+  #删除键
+  d.pop('mike')
+
+  #set与dic类似，存储一组不带值的key，key同样得是不可变对象
+  #初始化时得传入一组list到set()中，其中的重复元素会被自动过滤
+  s=set([1,2,'mike'，2])
+
+  #添加key
+  s.add('mk')
+
+  #删除key
+  s.remove(2)
+
+  #set相当于数学意义上无序和无重复的一组集合，因此两个set可以做交集并集
+  s1=set([1,2,3])
+  s2=set([2,3,4])
+  s1&s2 #交集
+  s1|s2 #并集
+  ```
+
+- ***再议不可变对象***
+
+  ```python
+  a='abc'
+  a.replace('a','A')
+  b=a.replace('a','A')
+  print(a)
+  print(b)
+  #结果 abc Abc
+
+  #可以将a指向新的字符串
+  a='kkk'
+
+  #a实际上是一个变量，指向一个真正的字符串对象'abc',符串的replace方法时，实际上时返回了一个新创建的字符串
+  #所以，对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容。相反，这些方法会创建新的对象并返回，这样，就保证了不可变对象本身永远是不可变的。
+  ```
+
+  ![0.jpg](C:\Users\tktet\Desktop\0.jpg.png)
 
 
